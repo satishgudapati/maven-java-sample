@@ -3,7 +3,7 @@ node{
       git 'https://github.com/satishgudapati/maven-java-sample'
     }
     stage('Compile-Package'){
-      sh 'mvn package'
+      sh 'mvn clean package'
     }
     stage('Email-Notification'){
         mail bcc: '', body: '''Hi Welcome to Jenkins email alerts
