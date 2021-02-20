@@ -5,9 +5,10 @@
   tasks:
     - name: Install Docker & python
       yum:
-        - docker
-        - python-pip
-      state: present
+        name:
+          - docker
+          - python-pip
+        state: present
       
     - name: Start and enable Docker
       service:
