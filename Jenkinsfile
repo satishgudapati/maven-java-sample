@@ -5,4 +5,9 @@ node{
     stage('Compile-Package'){
         sh 'mvn clean package'
     }
+    stage('Sonar Qube Analysis'){
+        withSonarQubeEnv(credentialsId: 'sonartocken') {
+            sh 'mvn sonar:sonar'
+        }
+    }
 }
